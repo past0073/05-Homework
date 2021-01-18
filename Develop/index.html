@@ -35,10 +35,10 @@
           <p>9:00 AM</p>
         </div>
         <div class="col-md-10">
-          <textarea id="test" ></textarea>
+          <textarea id="nine" ></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i id="testBtn" class="fas fa-save"></i>
+          <i id="9save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -47,10 +47,10 @@
           <p>10:00 AM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="ten"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="10save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -59,10 +59,10 @@
           <p>11:00 AM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="eleven"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="11save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -71,10 +71,10 @@
           <p>12:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="twelve"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="12save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -83,10 +83,10 @@
           <p>1:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="one"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="1save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -95,10 +95,10 @@
           <p>2:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="two"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="2save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -107,10 +107,10 @@
           <p>3:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="three"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="3save" class="fas fa-save"></i>
         </div>
       </div>
 
@@ -119,10 +119,10 @@
           <p>4:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="four"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="4save" class="fas fa-save"></i>
         </div>
       </div> 
 
@@ -131,10 +131,10 @@
           <p>5:00 PM</p>
         </div>
         <div class="col-md-10">
-          <textarea></textarea>
+          <textarea id="five"></textarea>
         </div>
         <div class="col-md-1, saveBtn">
-          <i class="fas fa-save"></i>
+          <i id="5save" class="fas fa-save"></i>
         </div>
       </div>
       
@@ -144,22 +144,73 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
        <script>
 
+      //Create variables for each text area and button using ids
+      nine = $("#nine");
+      ten = $("#ten");
+      eleven = $("#eleven");
+      twelve = $("#twelve");
+      one = $("#one");
+      two = $("#two");
+      three = $("#three");
+      four = $("#four");
+      five = $("#five");
+
+      nineBtn = $("#9save");
+      tenBtn = $("#10save");
+      elevenBtn = $("#11save");
+      twelveBtn = $("#12save");
+      oneBtn = $("#1save");
+      twoBtn = $("#2save");
+      threeBtn = $("#3save");
+      fourBtn = $("#4save");
+      fiveBtn = $("#5save");
+
+      var valNine = nine.val();
+      var valTen = ten.val();
+      var valEleven = eleven.val();
+      var valTwelve = twelve.val();
+      var valOne = one.val();
+      var valTwo = two.val();
+      var valThree = three.val();
+      var valFour = four.val();
+      var valFive = five.val();
+       
+      //save all text areas and buttons as an array:
+      savedNotesArray = [nine, ten, eleven, twelve, one, two, three, four, five];
+      buttonsArray = [nineBtn, tenBtn, elevenBtn, twelveBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn];
+      valuesArray = [valNine, valTen, valEleven, valTwelve, valOne, valTwo, valThree, valFour, valFive];
+      //Stringify that array? ^
+
         renderSavedNotes();
 
+  //Setting 9am text area to what was in local storage      
    function renderSavedNotes() {  
-    var textarea = $("#test").val();
-    savedText = localStorage.getItem("textarea");
-      $("#test").text(savedText);
+    var valNine = nine.val();
+    valNine = localStorage.getItem("nine");
+      nine.text(valNine);
     }; 
 
-   $("#testBtn").on("click", function () {
-    var textarea = $("#test").val();
-    alert(textarea);
-    localStorage.setItem("textarea", textarea);
-  
-    console.log(textarea);
-    renderSavedNotes();
+    //Create a for loop to set text area to what was in local storage
+    // for (i=0; i<savedNotesArray; i++) {
+
+    // }
+
+  //Setting on-click to 9am save button  
+   nineBtn.on("click", function () {
+    var valNine = nine.val();
+    localStorage.setItem("nine", valNine);
+      renderSavedNotes();
    });
+
+   //Create a for loop to assign all the save buttons to their times
+  //  for (i=0; i<savedNotesArray.length; i++) {
+  //     buttonsArray[i].on("click", function () {
+  //       alert("hi");
+  //     localStorage.setItem('savedNotesArray[i]', JSON.stringify(valuesArray[i]));
+  //     console.log(valuesArray[0]);
+  //     renderSavedNotes();
+  //     })
+  //  };
     
        </script>
   </body>
