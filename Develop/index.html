@@ -30,7 +30,7 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div id="9" value="9" class="row">
+      <div id="9" value="09" class="row">
         <div class="col-md-1">
           <p>9:00 AM</p>
         </div>
@@ -146,7 +146,6 @@
 
       //Create variables for each text area and button using ids
      
-
       nine = $("#nine");
       ten = $("#ten");
       eleven = $("#eleven");
@@ -186,6 +185,7 @@
 
 
         renderSavedNotes();
+       
 
 
     //Create a loop to set text area using local storage
@@ -195,13 +195,6 @@
         savedNotesArray[i].text(valuesArray[i])
       }
     };
-
-    
-
-    //Create a for loop to set text area to what was in local storage
-    // for (i=0; i<savedNotesArray; i++) {
-
-    // }
 
   //Setting on-click to 9am save button  
    nineBtn.on("click", function () {
@@ -271,14 +264,99 @@
   //Make the rows the appropriate color based on time of day
     // timeArray = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
-    currentHour = parseInt(moment().format('H'));
+    currentHour = moment().format('HH');
+    console.log(currentHour);
+    console.log($("#9").attr('value'));
 
-    row = document.querySelector(".row");
-    find = row.getAttribute("value");
-
-    if (row.value === currentHour) {
-      row.addClass("present");
+    if ($("#9").attr('value') === currentHour) {
+      $("#9").addClass("present");
     }
+    else if ($("#9").attr('value') > currentHour) {
+      $("#9").addClass("future");
+    }
+    else {
+      $("#9").addClass("past");
+    };
+
+    if ($("#10").attr('value') === currentHour) {
+      $("#10").addClass("present");
+    }
+    else if ($("#10").attr('value') > currentHour) {
+      $("#10").addClass("future");
+    }
+    else {
+      $("#10").addClass("past");
+    };
+
+    if ($("#11").attr('value') === currentHour) {
+      $("#11").addClass("present");
+    }
+    else if ($("#11").attr('value') > currentHour) {
+      $("#11").addClass("future");
+    }
+    else {
+      $("#11").addClass("past");
+    };
+
+    if ($("#12").attr('value') === currentHour) {
+      $("#12").addClass("present");
+    }
+    else if ($("#12").attr('value') > currentHour) {
+      $("#12").addClass("future");
+    }
+    else {
+      $("#12").addClass("past");
+    };
+
+    if ($("#13").attr('value') === currentHour) {
+      $("#13").addClass("present");
+    }
+    else if ($("#13").attr('value') > currentHour) {
+      $("#13").addClass("future");
+    }
+    else {
+      $("#13").addClass("past");
+    };
+
+    if ($("#14").attr('value') === currentHour) {
+      $("#14").addClass("present");
+    }
+    else if ($("#14").attr('value') > currentHour) {
+      $("#14").addClass("future");
+    }
+    else {
+      $("#14").addClass("past");
+    };
+
+    if ($("#15").attr('value') === currentHour) {
+      $("#15").addClass("present");
+    }
+    else if ($("#15").attr('value') > currentHour) {
+      $("#15").addClass("future");
+    }
+    else {
+      $("#15").addClass("past");
+    };
+
+    if ($("#16").attr('value') === currentHour) {
+      $("#16").addClass("present");
+    }
+    else if ($("#16").attr('value') > currentHour) {
+      $("#16").addClass("future");
+    }
+    else {
+      $("#16").addClass("past");
+    };
+
+    if ($("#17").attr('value') === currentHour) {
+      $("#17").addClass("present");
+    }
+    else if ($("#17").attr('value') > currentHour) {
+      $("#17").addClass("future");
+    }
+    else {
+      $("#17").addClass("past");
+    };
       
     
        </script>
