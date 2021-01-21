@@ -30,7 +30,7 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div id="9" class="row">
+      <div id="9" value="9" class="row">
         <div class="col-md-1">
           <p>9:00 AM</p>
         </div>
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div id="10" class="row">
+      <div id="10" value="10" class="row">
         <div class="col-md-1">
           <p>10:00 AM</p>
         </div>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div id="11" class="row">
+      <div id="11" value="11" class="row">
         <div class="col-md-1">
           <p>11:00 AM</p>
         </div>
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div id="12" class="row">
+      <div id="12" value="12" class="row">
         <div class="col-md-1">
           <p>12:00 PM</p>
         </div>
@@ -78,7 +78,7 @@
         </div>
       </div>
 
-      <div id="1" class="row">
+      <div id="13" value="13" class="row">
         <div class="col-md-1">
           <p>1:00 PM</p>
         </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
 
-      <div id="2" class="row">
+      <div id="14" value="14" class="row">
         <div class="col-md-1">
           <p>2:00 PM</p>
         </div>
@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <div id="3" class="row">
+      <div id="15" value="15" class="row">
         <div class="col-md-1">
           <p>3:00 PM</p>
         </div>
@@ -114,7 +114,7 @@
         </div>
       </div>
 
-      <div id="4" class="row">
+      <div id="16" value="16" class="row">
         <div class="col-md-1">
           <p>4:00 PM</p>
         </div>
@@ -126,7 +126,7 @@
         </div>
       </div> 
 
-      <div id="5" class="row">
+      <div id="17" value="17" class="row">
         <div class="col-md-1">
           <p>5:00 PM</p>
         </div>
@@ -145,6 +145,8 @@
        <script>
 
       //Create variables for each text area and button using ids
+     
+
       nine = $("#nine");
       ten = $("#ten");
       eleven = $("#eleven");
@@ -256,8 +258,6 @@
       renderSavedNotes();
    });
 
-
-
    //Create a for loop to assign all the save buttons to their times
   //  for (i=0; i<savedNotesArray.length; i++) {
   //     buttonsArray[i].on("click", function () {
@@ -267,6 +267,19 @@
   //     renderSavedNotes();
   //     })
   //  };
+
+  //Make the rows the appropriate color based on time of day
+    // timeArray = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+
+    currentHour = parseInt(moment().format('H'));
+
+    row = document.querySelector(".row");
+    find = row.getAttribute("value");
+
+    if (row.value === currentHour) {
+      row.addClass("present");
+    }
+      
     
        </script>
   </body>
