@@ -179,16 +179,22 @@
       savedNotesArray = [nine, ten, eleven, twelve, one, two, three, four, five];
       buttonsArray = [nineBtn, tenBtn, elevenBtn, twelveBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn];
       valuesArray = [valNine, valTen, valEleven, valTwelve, valOne, valTwo, valThree, valFour, valFive];
-      //Stringify that array? ^
+      savedNotesString = ["nine", "ten", "eleven", "twelve", "one", "two", "three", "four", "five"];
+      
+
 
         renderSavedNotes();
 
-  //Setting 9am text area to what was in local storage      
-   function renderSavedNotes() {  
-    var valNine = nine.val();
-    valNine = localStorage.getItem("nine");
-      nine.text(valNine);
-    }; 
+
+    //Create a loop to set text area using local storage
+    function renderSavedNotes(){
+      for (i=0; i<valuesArray.length; i++){
+        valuesArray[i] = localStorage.getItem(savedNotesString[i]);
+        savedNotesArray[i].text(valuesArray[i])
+      }
+    };
+
+    
 
     //Create a for loop to set text area to what was in local storage
     // for (i=0; i<savedNotesArray; i++) {
@@ -201,6 +207,56 @@
     localStorage.setItem("nine", valNine);
       renderSavedNotes();
    });
+
+   tenBtn.on("click", function () {
+    var valTen = ten.val();
+    localStorage.setItem("ten", valTen);
+      renderSavedNotes();
+   });
+
+   elevenBtn.on("click", function () {
+    var valEleven= eleven.val();
+    localStorage.setItem("eleven", valEleven);
+      renderSavedNotes();
+   });
+
+   twelveBtn.on("click", function () {
+    var valTwelve= twelve.val();
+    localStorage.setItem("twelve", valTwelve);
+      renderSavedNotes();
+   });
+
+   oneBtn.on("click", function () {
+    var valOne= one.val();
+    localStorage.setItem("one", valOne);
+      renderSavedNotes();
+   });
+
+   twoBtn.on("click", function () {
+    var valTwo= two.val();
+    localStorage.setItem("two", valTwo);
+      renderSavedNotes();
+   });
+
+   threeBtn.on("click", function () {
+    var valThree= three.val();
+    localStorage.setItem("three", valThree);
+      renderSavedNotes();
+   });
+
+   fourBtn.on("click", function () {
+    var valFour= four.val();
+    localStorage.setItem("four", valFour);
+      renderSavedNotes();
+   });
+
+   fiveBtn.on("click", function () {
+    var valFive= five.val();
+    localStorage.setItem("five", valFive);
+      renderSavedNotes();
+   });
+
+
 
    //Create a for loop to assign all the save buttons to their times
   //  for (i=0; i<savedNotesArray.length; i++) {
