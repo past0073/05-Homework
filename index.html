@@ -144,9 +144,8 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
        <script>
 
-      //Create variables for each text area and button using ids
-     
-      nine = $("#nine");
+      //Created variables for each text area and button using IDs
+           nine = $("#nine");
       ten = $("#ten");
       eleven = $("#eleven");
       twelve = $("#twelve");
@@ -176,18 +175,14 @@
       var valFour = four.val();
       var valFive = five.val();
        
-      //save all text areas and buttons as an array:
+      //Saved all text areas and buttons as an array:
       savedNotesArray = [nine, ten, eleven, twelve, one, two, three, four, five];
       buttonsArray = [nineBtn, tenBtn, elevenBtn, twelveBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn];
       valuesArray = [valNine, valTen, valEleven, valTwelve, valOne, valTwo, valThree, valFour, valFive];
       savedNotesString = ["nine", "ten", "eleven", "twelve", "one", "two", "three", "four", "five"];
       
-
-
         renderSavedNotes();
        
-
-
     //Create a loop to set text area using local storage
     function renderSavedNotes(){
       for (i=0; i<valuesArray.length; i++){
@@ -196,7 +191,7 @@
       }
     };
 
-  //Setting on-click to 9am save button  
+  //Set on-click event listeners to save buttons
    nineBtn.on("click", function () {
     var valNine = nine.val();
     localStorage.setItem("nine", valNine);
@@ -343,8 +338,7 @@
     else {
       $("#17").addClass("past");
     };
-      
-    
+          
        </script>
   </body>
 </html>
