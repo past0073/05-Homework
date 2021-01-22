@@ -251,22 +251,8 @@
       renderSavedNotes();
    });
 
-   //Create a for loop to assign all the save buttons to their times
-  //  for (i=0; i<savedNotesArray.length; i++) {
-  //     buttonsArray[i].on("click", function () {
-  //       alert("hi");
-  //     localStorage.setItem('savedNotesArray[i]', JSON.stringify(valuesArray[i]));
-  //     console.log(valuesArray[0]);
-  //     renderSavedNotes();
-  //     })
-  //  };
-
-  //Make the rows the appropriate color based on time of day
-    // timeArray = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
-
+    //Make the rows the appropriate color based on time of day
     currentHour = moment().format('HH');
-    console.log(currentHour);
-    console.log($("#9").attr('value'));
 
     if ($("#9").attr('value') === currentHour) {
       $("#9").addClass("present");
