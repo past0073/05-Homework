@@ -4,7 +4,7 @@ This assignment is a work day scheduler that allows the user to type notes or re
 
 With additional time available put into this assignment I would have explored more efficient ways to assign classes to the rows, but I wasn't quite able to get there within the given time frame this week. 
 
-Link to live URL: https://past0073.github.io/05-Homework/
+Link to live URL: https://past0073.github.io/Work-Day-Scheduler/
 
 Screenshots:
 
